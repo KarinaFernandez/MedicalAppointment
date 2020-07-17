@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Reserves</string>
+    <string name="welcome_text">Bienvenido a Reservas Medicas</string>
+    <string name="email_example">email@email.com</string>
+    <string name="password_example">password</string>
+    <string name="login_text">INICIAR SESIÓN</string>
+    <string name="create_account_text">No tengo cuenta</string>
+    <string name="create_account_button">CREAR CUENTA</string>
+</resources>
