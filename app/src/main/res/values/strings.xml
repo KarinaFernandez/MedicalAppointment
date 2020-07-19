@@ -20,4 +20,7 @@
     <string name="invalidPhone">Teléfono invalido, reingrese por favor</string>
     <string name="invalidDocument">Ingrese su documento de identidad sin puntos ni guiones</string>
     <string name="errorRegisteringUser">Ocurrió un error y no se pudo registrar la cuenta</string>
+    <string name="cancel">Cancelar</string>
+    <string name="loginMessage">Iniciar Sesión</string>
+    <string name="errorLoginUser">Valide los datos ingresados</string>
 </resources>

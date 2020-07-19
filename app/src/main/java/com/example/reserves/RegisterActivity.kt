@@ -1,5 +1,6 @@
 package com.example.reserves
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Patterns
@@ -11,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_user_registration.*
 
 
-class UserRegistrationActivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -111,7 +112,7 @@ class UserRegistrationActivity : AppCompatActivity() {
             .matches()
     }
 
-    private fun isANumber(value: String) : Boolean {
+    private fun isANumber(value: String): Boolean {
         return value?.toIntOrNull()?.let { true } == true
     }
 
@@ -125,8 +126,6 @@ class UserRegistrationActivity : AppCompatActivity() {
     ) {
         val apiService = RestApiService()
         val user = UserData(
-            //id = null,
-            //kind = "USUARIO",
             nombre = name,
             apellido = surname,
             email = email,
@@ -139,7 +138,8 @@ class UserRegistrationActivity : AppCompatActivity() {
         apiService.createUser(user) {
             if (it != null) {
                 // Push to home activity
-                Toast.makeText(applicationContext, "OK!!!!!", Toast.LENGTH_LONG).show()
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
             } else {
                 Toast.makeText(
                     applicationContext,

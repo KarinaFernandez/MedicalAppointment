@@ -4,56 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="16dp"
+    android:layout_margin="30dp"
     android:layout_centerInParent="true"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".UserRegistrationActivity">
+    tools:context=".RegisterActivity">
+
+    <TextView
+        android:id="@+id/loginMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/loginMessage"
+        android:textColor="#2196F3"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/nameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:autofillHints="@string/name"
         android:hint="@string/name"
-        />
+        android:inputType="textPersonName" />
     <EditText
         android:id="@+id/surnameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/surname"
-        />
+        android:inputType="textPersonName"
+        android:autofillHints="@string/surname" />
     <EditText
         android:id="@+id/emailEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
-        />
+        android:autofillHints="@string/email" />
     <EditText
         android:id="@+id/documentEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/document"
-        />
+        android:inputType="number"
+        android:autofillHints="@string/document" />
     <EditText
         android:id="@+id/phoneEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/phoneNumber"
-        />
+        android:inputType="phone"
+        android:autofillHints="@string/phoneNumber" />
     <EditText
         android:id="@+id/passwordEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/password"
         android:inputType="textPassword"
-        />
+        android:autofillHints="@string/password" />
+
     <Button
         android:id="@+id/registerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/register"
-        />
+        android:layout_marginTop="30dp"
+        android:text="@string/register" />
     <ProgressBar
         android:id="@+id/progress_bar"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"

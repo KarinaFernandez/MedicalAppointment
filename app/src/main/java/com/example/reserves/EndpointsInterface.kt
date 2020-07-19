@@ -9,8 +9,12 @@ import retrofit2.http.Query
 
 interface EndpointsInterface {
 
-   // @Headers("Content-Type: application/json")
-    @POST("usuarios")
-    fun addUser(@Body userData: UserData): Call<UserData>
+    @POST("login")
+    fun loginUser(@Body userData: UserData): Call<UserData>
 
+    @POST("usuarios")
+    fun createUser(@Body userData: UserData): Call<UserData>
+
+    @GET("medicos")
+    fun getDoctors(): Call<List<DoctorData>>
 }

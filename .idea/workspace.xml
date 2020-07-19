@@ -10,20 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb6accd0-7c0d-480f-bc20-402fddebe443" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_gson_gson_2_8_6_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_logging_interceptor_4_6_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_okhttp_4_6_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_okhttp_urlconnection_4_6_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okio_okio_2_6_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_retrofit2_converter_gson_2_6_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_retrofit2_retrofit_2_6_1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/EndpointsInterface.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/RestApiService.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/ServiceBuilder.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/UserData.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/UserRegistrationActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_user_registration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cardview_cardview_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_recyclerview_recyclerview_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/DoctorData.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/HomeActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -35,16 +26,19 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/EndpointsInterface.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/EndpointsInterface.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/RestApiService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/RestApiService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/UserData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/UserData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/UserRegistrationActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/RegisterActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_user_registration.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_user_registration.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,6 +167,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="499" y="156" key="#com.intellij.ide.util.MemberChooser" timestamp="1595121925845">
+      <screen x="0" y="23" width="1440" height="820" />
+    </state>
+    <state x="499" y="156" key="#com.intellij.ide.util.MemberChooser/0.23.1440.820@0.23.1440.820" timestamp="1595121925845" />
     <state x="457" y="224" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1595097550890">
       <screen x="0" y="23" width="1440" height="820" />
     </state>
@@ -185,45 +183,86 @@
       <screen x="0" y="23" width="1440" height="820" />
     </state>
     <state x="483" y="143" key="#xdebugger.evaluate/0.23.1440.820@0.23.1440.820" timestamp="1595110472401" />
-    <state x="575" y="305" key="AndroidCreateXmlResourceDialog" timestamp="1595106110797">
+    <state x="575" y="305" key="AndroidCreateXmlResourceDialog" timestamp="1595179824381">
       <screen x="0" y="23" width="1440" height="820" />
     </state>
-    <state x="575" y="305" key="AndroidCreateXmlResourceDialog/0.23.1440.820@0.23.1440.820" timestamp="1595106110797" />
+    <state x="575" y="305" key="AndroidCreateXmlResourceDialog/0.23.1440.820@0.23.1440.820" timestamp="1595179824381" />
     <state x="576" y="205" key="AndroidProcessChooserDialog" timestamp="1595106667114">
       <screen x="0" y="23" width="1440" height="820" />
     </state>
     <state x="576" y="205" key="AndroidProcessChooserDialog/0.23.1440.820@0.23.1440.820" timestamp="1595106667114" />
-    <state width="1398" height="262" key="GridCell.Tab.0.bottom" timestamp="1595112119517">
+    <state width="1398" height="139" key="GridCell.Tab.0.bottom" timestamp="1595178811802">
       <screen x="0" y="23" width="1440" height="820" />
     </state>
-    <state width="1398" height="262" key="GridCell.Tab.0.bottom/0.23.1440.820@0.23.1440.820" timestamp="1595112119517" />
-    <state width="1398" height="262" key="GridCell.Tab.0.center" timestamp="1595112119517">
+    <state width="1398" height="139" key="GridCell.Tab.0.bottom/0.23.1440.820@0.23.1440.820" timestamp="1595178811802" />
+    <state width="1398" height="139" key="GridCell.Tab.0.center" timestamp="1595178811801">
       <screen x="0" y="23" width="1440" height="820" />
     </state>
-    <state width="1398" height="262" key="GridCell.Tab.0.center/0.23.1440.820@0.23.1440.820" timestamp="1595112119517" />
-    <state width="1398" height="262" key="GridCell.Tab.0.left" timestamp="1595112119516">
+    <state width="1398" height="139" key="GridCell.Tab.0.center/0.23.1440.820@0.23.1440.820" timestamp="1595178811801" />
+    <state width="1398" height="139" key="GridCell.Tab.0.left" timestamp="1595178811801">
       <screen x="0" y="23" width="1440" height="820" />
     </state>
-    <state width="1398" height="262" key="GridCell.Tab.0.left/0.23.1440.820@0.23.1440.820" timestamp="1595112119516" />
-    <state width="1398" height="262" key="GridCell.Tab.0.right" timestamp="1595112119517">
+    <state width="1398" height="139" key="GridCell.Tab.0.left/0.23.1440.820@0.23.1440.820" timestamp="1595178811801" />
+    <state width="1398" height="139" key="GridCell.Tab.0.right" timestamp="1595178811801">
       <screen x="0" y="23" width="1440" height="820" />
     </state>
-    <state width="1398" height="262" key="GridCell.Tab.0.right/0.23.1440.820@0.23.1440.820" timestamp="1595112119517" />
-    <state width="1398" height="262" key="GridCell.Tab.1.bottom" timestamp="1595112119518">
+    <state width="1398" height="139" key="GridCell.Tab.0.right/0.23.1440.820@0.23.1440.820" timestamp="1595178811801" />
+    <state width="1398" height="139" key="GridCell.Tab.1.bottom" timestamp="1595178811802">
       <screen x="0" y="23" width="1440" height="820" />
     </state>
-    <state width="1398" height="262" key="GridCell.Tab.1.bottom/0.23.1440.820@0.23.1440.820" timestamp="1595112119518" />
-    <state width="1398" height="262" key="GridCell.Tab.1.center" timestamp="1595112119517">
+    <state width="1398" height="139" key="GridCell.Tab.1.bottom/0.23.1440.820@0.23.1440.820" timestamp="1595178811802" />
+    <state width="1398" height="139" key="GridCell.Tab.1.center" timestamp="1595178811802">
       <screen x="0" y="23" width="1440" height="820" />
     </state>
-    <state width="1398" height="262" key="GridCell.Tab.1.center/0.23.1440.820@0.23.1440.820" timestamp="1595112119517" />
-    <state width="1398" height="262" key="GridCell.Tab.1.left" timestamp="1595112119517">
+    <state width="1398" height="139" key="GridCell.Tab.1.center/0.23.1440.820@0.23.1440.820" timestamp="1595178811802" />
+    <state width="1398" height="139" key="GridCell.Tab.1.left" timestamp="1595178811802">
       <screen x="0" y="23" width="1440" height="820" />
     </state>
-    <state width="1398" height="262" key="GridCell.Tab.1.left/0.23.1440.820@0.23.1440.820" timestamp="1595112119517" />
-    <state width="1398" height="262" key="GridCell.Tab.1.right" timestamp="1595112119518">
+    <state width="1398" height="139" key="GridCell.Tab.1.left/0.23.1440.820@0.23.1440.820" timestamp="1595178811802" />
+    <state width="1398" height="139" key="GridCell.Tab.1.right" timestamp="1595178811802">
       <screen x="0" y="23" width="1440" height="820" />
     </state>
-    <state width="1398" height="262" key="GridCell.Tab.1.right/0.23.1440.820@0.23.1440.820" timestamp="1595112119518" />
+    <state width="1398" height="139" key="GridCell.Tab.1.right/0.23.1440.820@0.23.1440.820" timestamp="1595178811802" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/reserves/RegisterActivity.kt</url>
+          <line>138</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/reserves/HomeActivity.kt</url>
+          <line>16</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/reserves/RestApiService.kt</url>
+          <line>46</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/reserves/RestApiService.kt</url>
+          <line>53</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/reserves/RestApiService.kt</url>
+          <line>41</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/reserves/RestApiService.kt</url>
+          <line>33</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/reserves/MainActivity.kt</url>
+          <line>84</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
