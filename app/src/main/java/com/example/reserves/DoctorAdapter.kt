@@ -8,9 +8,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.doctor_item.view.*
 
-class DoctorAdapter(private val doctorList: ArrayList<DoctorItem>
-                  //  private val listener: OnItemClickListener
-): RecyclerView.Adapter<DoctorAdapter.DoctorViewHolder>() {
+class DoctorAdapter(private val doctorList: ArrayList<DoctorItem>,
+                    private val listener: OnItemClickListener): RecyclerView.Adapter<DoctorAdapter.DoctorViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DoctorViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.doctor_item, parent, false)
@@ -34,24 +33,24 @@ class DoctorAdapter(private val doctorList: ArrayList<DoctorItem>
          */
     }
 
-    inner class DoctorViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        //, View.OnClickListener {
+    inner class DoctorViewHolder(itemView: View): RecyclerView.ViewHolder(itemView),
+        View.OnClickListener {
         val nameTextView: TextView = itemView.doctorName
         val surnameTextView: TextView = itemView.doctorSurname
         //   val specialtyTextView: TextView = itemView.specialty
 
-        /*
-        init {
-            itemView.scheduleButton.setOnClickListener(this)
-        }*/
+        val scheduleButton: Button = itemView.scheduleButton
 
-        /*
+        init {
+            itemView.setOnClickListener(this)
+        }
+
         override fun onClick(v: View?) {
             val position = adapterPosition
             if (position != RecyclerView.NO_POSITION) {
                 listener.onItemClick(position)
             }
-        }*/
+        }
     }
 
     interface OnItemClickListener {

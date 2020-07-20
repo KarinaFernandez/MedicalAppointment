@@ -24,6 +24,7 @@
     <string name="loginMessage">Iniciar Sesión</string>
     <string name="errorLoginUser">Valide los datos ingresados</string>
     <string name="SearchText">Buscar</string>
-    <string name="scheduleText">RESERVAR</string>
+    <string name="scheduleText">Reservar</string>
     <string name="specialty">Especialidad</string>
+    <string name="date">20/08/2020</string>
 </resources>

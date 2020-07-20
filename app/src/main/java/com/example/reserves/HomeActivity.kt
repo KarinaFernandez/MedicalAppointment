@@ -8,8 +8,9 @@ import kotlinx.android.synthetic.main.activity_home.*
 
 import kotlin.collections.ArrayList
 
-class HomeActivity : AppCompatActivity() {
-    //, DoctorAdapter.OnItemClickListener {
+class HomeActivity : AppCompatActivity(), DoctorAdapter.OnItemClickListener {
+    private var doctors = ArrayList<DoctorItem>()
+    private val adapter = DoctorAdapter(doctors, this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,8 +27,9 @@ class HomeActivity : AppCompatActivity() {
                         it.apellido
                     )
                     list += item
+                    doctors = list
                 }
-                doctorsRecyclerView.adapter = DoctorAdapter(list )
+                doctorsRecyclerView.adapter = DoctorAdapter(list,this )
                 doctorsRecyclerView.layoutManager = LinearLayoutManager(this)
                 doctorsRecyclerView.setHasFixedSize(true)
             } else {
@@ -40,8 +42,9 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
-    /*
     override fun onItemClick(position: Int) {
-        val clickedDoctor : DoctorItem = list
-    }*/
+        val clickedDoctor = doctors[position]
+        clickedDoctor.name = "CLICKED"
+        adapter.notifyItemChanged(position)
+    }
 }
