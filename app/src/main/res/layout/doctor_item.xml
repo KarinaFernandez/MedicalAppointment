@@ -8,7 +8,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/doctorName"
+            android:id="@+id/scheduleDoctor"
             android:layout_width="125dp"
             android:layout_height="30dp"
             android:layout_marginStart="8dp"
@@ -18,11 +18,11 @@
             android:textStyle="bold"
             />
         <TextView
-            android:id="@+id/doctorSurname"
+            android:id="@+id/doctorInfo"
             android:layout_width="125dp"
             android:layout_height="30dp"
             android:layout_marginEnd="8dp"
-            android:layout_toEndOf="@+id/doctorName"
+            android:layout_toEndOf="@+id/scheduleDoctor"
             android:text="@string/surname"
             tools:textSize="18sp"
             android:textStyle="bold"/>
@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:layout_toEndOf="@+id/doctorSurname"
+            android:layout_toEndOf="@+id/doctorInfo"
             android:text="@string/scheduleText" />
 
         <!--<TextView

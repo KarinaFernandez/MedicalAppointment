@@ -1,5 +1,6 @@
 package com.example.reserves
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -42,9 +43,14 @@ class HomeActivity : AppCompatActivity(), DoctorAdapter.OnItemClickListener {
         }
     }
 
-    override fun onItemClick(position: Int) {
-        val clickedDoctor = doctors[position]
-        clickedDoctor.name = "CLICKED"
+    override fun onItemClick(item: DoctorItem, position: Int) {
+        val selectedDoctor = doctors[position]
         adapter.notifyItemChanged(position)
+
+        // Push to schedule activity
+        val intent = Intent(this, ScheduleActivity::class.java)
+        intent.putExtra("doctorName", selectedDoctor.name)
+        intent.putExtra("doctorSurname", selectedDoctor.surname)
+        startActivity(intent)
     }
 }

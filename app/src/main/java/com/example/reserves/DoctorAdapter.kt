@@ -25,35 +25,23 @@ class DoctorAdapter(private val doctorList: ArrayList<DoctorItem>,
         holder.nameTextView.text = currentDoctor.name
         holder.surnameTextView.text = currentDoctor.surname
 
-        /*
-        val sb = StringBuilder()
-        currentDoctor.specialty?.forEach { sb.append(it).append(" - ")}
-        val specialty = sb.removeSuffix("-").toString()
-        holder.specialtyTextView.text = specialty
-         */
+        holder.initialize(currentDoctor, position)
     }
 
-    inner class DoctorViewHolder(itemView: View): RecyclerView.ViewHolder(itemView),
-        View.OnClickListener {
-        val nameTextView: TextView = itemView.doctorName
-        val surnameTextView: TextView = itemView.doctorSurname
+    inner class DoctorViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+        val nameTextView: TextView = itemView.scheduleDoctor
+        val surnameTextView: TextView = itemView.doctorInfo
         //   val specialtyTextView: TextView = itemView.specialty
+        private val scheduleButton: Button = itemView.scheduleButton
 
-        val scheduleButton: Button = itemView.scheduleButton
-
-        init {
-            itemView.setOnClickListener(this)
-        }
-
-        override fun onClick(v: View?) {
-            val position = adapterPosition
-            if (position != RecyclerView.NO_POSITION) {
-                listener.onItemClick(position)
+        fun initialize(item: DoctorItem, position: Int) {
+            scheduleButton.setOnClickListener {
+                listener.onItemClick(item, position)
             }
         }
     }
 
     interface OnItemClickListener {
-        fun onItemClick(position: Int)
+        fun onItemClick(item: DoctorItem, position: Int)
     }
 }
