@@ -8,44 +8,37 @@ import android.widget.EditText
 import androidx.appcompat.widget.SearchView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_home.*
 
 import kotlin.collections.ArrayList
 
-class HomeActivity : AppCompatActivity(), DoctorAdapter.OnItemClickListener {
-    private var doctors = ArrayList<DoctorItem>()
+class HomeActivity : AppCompatActivity(), DoctorAdapter.OnItemClickListener, SearchView.OnQueryTextListener {
     private var list = ArrayList<DoctorItem>()
+    private var doctors = ArrayList<DoctorItem>()
     private val adapter = DoctorAdapter(doctors, this)
+    lateinit var recyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
         val searchView = findViewById<SearchView>(R.id.searchView)
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                filterList(query)
-                return true
-            }
+        searchView.setOnQueryTextListener(this)
 
-            override fun onQueryTextChange(s: String): Boolean {
-                filterList(s)
-                return true
-            }
-        })
+        recyclerView = findViewById(R.id.doctorsRecyclerView)
 
         // Get doctors from API
         getDoctors()
     }
 
-    private fun filterList(filterItem: String?) {
-        var tempList: ArrayList<DoctorItem> = ArrayList()
-        for (doctor in doctors) {
-            if (filterItem.toString() in doctor.name.toString()) {
-                tempList.add(doctor)
-            }
-        }
-        adapter.updateList(tempList)
+    override fun onQueryTextSubmit(query: String?): Boolean {
+        return false
+    }
+
+    override fun onQueryTextChange(s: String): Boolean {
+        adapter.filter.filter(s)
+        return false
     }
 
     private fun getDoctors() {
@@ -64,9 +57,9 @@ class HomeActivity : AppCompatActivity(), DoctorAdapter.OnItemClickListener {
                     doctors = list
                 }
 
-                doctorsRecyclerView.adapter = DoctorAdapter(doctors, this)
-                doctorsRecyclerView.layoutManager = LinearLayoutManager(this)
-             //    doctorsRecyclerView.setHasFixedSize(true)
+                recyclerView.adapter = DoctorAdapter(doctors, this)
+                recyclerView.layoutManager = LinearLayoutManager(this)
+                recyclerView.setHasFixedSize(true)
             } else {
                 Toast.makeText(
                     applicationContext,
