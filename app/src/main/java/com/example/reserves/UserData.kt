@@ -3,6 +3,7 @@ package com.example.reserves
 import com.google.gson.annotations.SerializedName
 
 data class UserData (
+    @SerializedName("_id") val _id: String?,
     @SerializedName("nombre") val nombre: String?,
     @SerializedName("apellido") val apellido: String?,
     @SerializedName("email") val email: String?,

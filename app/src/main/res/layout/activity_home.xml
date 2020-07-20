@@ -5,12 +5,12 @@
     android:id="@+id/country_content_id"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/colorPrimary"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.SearchView
-        android:id="@+id/country_search"
+        android:id="@+id/doctorSearchView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
@@ -19,9 +19,10 @@
         app:queryBackground="@null" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/country_rv"
+        android:id="@+id/doctorsRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimaryDark" />
+        android:background="@color/colorPrimary"
+        tools:listitem="@layout/doctor_item"/>
 
 </LinearLayout>

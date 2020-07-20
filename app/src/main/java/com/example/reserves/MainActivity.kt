@@ -73,7 +73,8 @@ class MainActivity : AppCompatActivity() {
         password: String
     ) {
         val apiService = RestApiService()
-        val user = UserData(nombre = null,
+        val user = UserData(_id = null,
+            nombre = null,
             apellido = null,
             email = email,
             estado = "ACTIVO",

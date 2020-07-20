@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/doctorName"
+            android:layout_width="125dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            tools:text="@string/name"
+            tools:textSize="18sp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/doctorSurname"
+            android:layout_width="125dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="8dp"
+            android:layout_toEndOf="@+id/doctorName"
+            android:text="@string/surname"
+            tools:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/scheduleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_toEndOf="@+id/doctorSurname"
+            android:text="@string/scheduleText" />
+
+        <!--<TextView
+            android:id="@+id/specialty"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_below="@+id/doctorName"
+            android:text="@string/specialty"
+            />-->
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

@@ -26,6 +26,7 @@
         android:layout_marginTop="30dp"
         android:autofillHints=""
         android:hint="@string/email_example"
+        android:text="karina@fernandez.com"
         android:inputType="textEmailAddress" />
 
     <EditText
@@ -34,6 +35,7 @@
         android:hint="@string/password_example"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="karina"
         android:autofillHints="@string/password" />
 
     <Button

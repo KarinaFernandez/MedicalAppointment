@@ -125,7 +125,7 @@ class RegisterActivity : AppCompatActivity() {
         password: String
     ) {
         val apiService = RestApiService()
-        val user = UserData(
+        val user = UserData(_id = null,
             nombre = name,
             apellido = surname,
             email = email,

@@ -38,20 +38,19 @@ class RestApiService {
         )
     }
 
-    fun getDoctors(onResult: (List<DoctorData>?) -> Unit) {
+    fun getDoctors(onResult: (ArrayList<DoctorData>?) -> Unit) {
         val retrofit = ServiceBuilder.buildService(EndpointsInterface::class.java)
 
-
         retrofit.getDoctors().enqueue(
-            object : Callback<List<DoctorData>> {
+            object : Callback<ArrayList<DoctorData>> {
             override fun onResponse(
-                call: Call<List<DoctorData>>,
-                response: Response<List<DoctorData>>
+                call: Call<ArrayList<DoctorData>>,
+                response: Response<ArrayList<DoctorData>>
             ) {
                 val doctors = response.body()
                 onResult(doctors)
             }
-                override fun onFailure(call: Call<List<DoctorData>>, t: Throwable) {
+                override fun onFailure(call: Call<ArrayList<DoctorData>>, t: Throwable) {
                     onResult(null)
                 }
             })

@@ -23,4 +23,7 @@
     <string name="cancel">Cancelar</string>
     <string name="loginMessage">Iniciar Sesión</string>
     <string name="errorLoginUser">Valide los datos ingresados</string>
+    <string name="SearchText">Buscar</string>
+    <string name="scheduleText">RESERVAR</string>
+    <string name="specialty">Especialidad</string>
 </resources>

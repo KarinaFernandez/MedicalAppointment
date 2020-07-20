@@ -16,5 +16,5 @@ interface EndpointsInterface {
     fun createUser(@Body userData: UserData): Call<UserData>
 
     @GET("medicos")
-    fun getDoctors(): Call<List<DoctorData>>
+    fun getDoctors(): Call<ArrayList<DoctorData>>
 }
