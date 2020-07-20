@@ -68,5 +68,5 @@
         android:indeterminateTint="@color/colorPrimary"
         android:scaleY="4"
         android:visibility="gone"
-        app:layout_constraintEnd_toStartOf="parent" />
+        />
 </LinearLayout>

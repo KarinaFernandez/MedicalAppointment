@@ -30,6 +30,8 @@ class MainActivity : AppCompatActivity() {
 
         loginButton.setOnClickListener {
             if (validaData(email.text.toString().trim(), password.text.toString().trim())) {
+                progress_bar.visibility = View.VISIBLE
+
                 loginUser(
                     email = email.text.toString().trim(),
                     password = password.text.toString().trim()
@@ -53,7 +55,6 @@ class MainActivity : AppCompatActivity() {
             ).show()
             progress_bar.visibility = View.GONE
             return false
-            // return@OnClickListener
         }
 
         if (password.length < 6) {
@@ -64,7 +65,6 @@ class MainActivity : AppCompatActivity() {
             ).show()
             progress_bar.visibility = View.GONE
             return false
-            //return@OnClickListener
         }
         return true
     }

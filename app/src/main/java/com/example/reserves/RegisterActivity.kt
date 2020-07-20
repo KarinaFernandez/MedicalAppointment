@@ -28,83 +28,27 @@ class RegisterActivity : AppCompatActivity() {
         val registerButton = findViewById<Button>(R.id.registerButton)
 
         registerButton.setOnClickListener {
-            if (name.text.toString().trim().isEmpty() || isANumber(name.text.toString().trim())) {
-                Toast.makeText(
-                    applicationContext,
-                    getString(R.string.invalidName),
-                    Toast.LENGTH_LONG
-                ).show()
-                // return@OnClickListener
-            }
-
-            if (surname.text.toString().trim().isEmpty() || isANumber(
-                    surname.text.toString().trim()
-                )
-            ) {
-                Toast.makeText(
-                    applicationContext,
-                    getString(R.string.invalidSurname),
-                    Toast.LENGTH_LONG
-                ).show()
-                // return@OnClickListener
-            }
-
-            if (email.text.toString().trim().isEmpty() || !isValidEmail(
-                    email.text.toString().trim()
-                )
-            ) {
-                Toast.makeText(
-                    applicationContext,
-                    getString(R.string.invalidEmail),
-                    Toast.LENGTH_LONG
-                ).show()
-                // return@OnClickListener
-            }
-
-            if (document.text.toString().trim().isEmpty() || !isANumber(
-                    document.text.toString().trim()
-                )
-            ) {
-                Toast.makeText(
-                    applicationContext,
-                    getString(R.string.invalidDocument),
-                    Toast.LENGTH_LONG
-                ).show()
-                //  return@OnClickListener
-            }
-
-            if (phone.text.toString().trim().isEmpty() || !isANumber(
-                    phone.text.toString().trim()
-                )
-            ) {
-                Toast.makeText(
-                    applicationContext,
-                    getString(R.string.invalidPhone),
-                    Toast.LENGTH_LONG
-                ).show()
-                // return@OnClickListener
-            }
-
-            if (password.text.toString().trim().length < 6) {
-                Toast.makeText(
-                    applicationContext,
-                    getString(R.string.invalidPassword),
-                    Toast.LENGTH_LONG
-                ).show()
-                //return@OnClickListener
-            }
-
             progress_bar.visibility = View.VISIBLE
 
-            // Valid values, call to service
-            createUser(
-                name = name.text.toString().trim(),
-                surname = surname.text.toString().trim(),
-                email = email.text.toString().trim(),
-                document = document.text.toString().trim().toInt(),
-                phone = phone.text.toString().trim(),
-                password = password.text.toString().trim()
-            )
+            if (isValidData(
+                name.text.toString().trim(),
+                surname.text.toString().trim(),
+                email.text.toString().trim(),
+                document.text.toString().trim(),
+                phone.text.toString().trim(),
+                password.text.toString().trim()
+            )) {
+                // Valid values, call to service
+                createUser(
+                    name = name.text.toString().trim(),
+                    surname = surname.text.toString().trim(),
+                    email = email.text.toString().trim(),
+                    document = document.text.toString().trim().toInt(),
+                    phone = phone.text.toString().trim(),
+                    password = password.text.toString().trim()
+                )
+            }
+            progress_bar.visibility = View.GONE
         }
     }
 
@@ -117,6 +61,80 @@ class RegisterActivity : AppCompatActivity() {
         return value?.toIntOrNull()?.let { true } == true
     }
 
+    private fun isValidData(
+        name: String,
+        surname: String,
+        email: String,
+        document: String,
+        phone: String,
+        password: String
+    ): Boolean {
+        if (name.isEmpty() || isANumber(name)) {
+            Toast.makeText(
+                applicationContext,
+                getString(R.string.invalidName),
+                Toast.LENGTH_LONG
+            ).show()
+            return false
+        }
+
+        if (surname.isEmpty() || isANumber(
+                surname
+            )
+        ) {
+            Toast.makeText(
+                applicationContext,
+                getString(R.string.invalidSurname),
+                Toast.LENGTH_LONG
+            ).show()
+            return false
+        }
+
+        if (email.isEmpty() || !isValidEmail(
+                email
+            )
+        ) {
+            Toast.makeText(
+                applicationContext,
+                getString(R.string.invalidEmail),
+                Toast.LENGTH_LONG
+            ).show()
+            return false
+        }
+
+        if (document.isEmpty() || !isANumber(
+                document
+            )
+        ) {
+            Toast.makeText(
+                applicationContext,
+                getString(R.string.invalidDocument),
+                Toast.LENGTH_LONG
+            ).show()
+            return false
+        }
+
+        if (phone.isEmpty() || !isANumber(phone)
+        ) {
+            Toast.makeText(
+                applicationContext,
+                getString(R.string.invalidPhone),
+                Toast.LENGTH_LONG
+            ).show()
+            return false
+        }
+
+        if (password.length < 6) {
+            Toast.makeText(
+                applicationContext,
+                getString(R.string.invalidPassword),
+                Toast.LENGTH_LONG
+            ).show()
+            return false
+        }
+        return true
+    }
+
     private fun createUser(
         name: String,
         surname: String,
@@ -126,7 +144,8 @@ class RegisterActivity : AppCompatActivity() {
         password: String
     ) {
         val apiService = RestApiService()
-        val user = UserData(_id = null,
+        val user = UserData(
+            _id = null,
             nombre = name,
             apellido = surname,
             email = email,
@@ -136,6 +155,7 @@ class RegisterActivity : AppCompatActivity() {
             contraseña = password
         )
 
+        progress_bar.visibility = View.VISIBLE
         apiService.createUser(user) {
             if (it != null) {
                 // Save in preferences the user
@@ -143,7 +163,7 @@ class RegisterActivity : AppCompatActivity() {
                 val editor = sharedPreferences.edit()
                 editor.putString("userId", it._id)
                 editor.apply()
-                
+
                 // Push to home activity
                 val intent = Intent(this, HomeActivity::class.java)
                 startActivity(intent)

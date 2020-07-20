@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.doctor_item.view.*
 
-class DoctorAdapter(private val doctorList: ArrayList<DoctorItem>,
+class DoctorAdapter(private var doctorList: ArrayList<DoctorItem>,
                     private val listener: OnItemClickListener): RecyclerView.Adapter<DoctorAdapter.DoctorViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DoctorViewHolder {
@@ -43,5 +43,10 @@ class DoctorAdapter(private val doctorList: ArrayList<DoctorItem>,
 
     interface OnItemClickListener {
         fun onItemClick(item: DoctorItem, position: Int)
+    }
+
+    fun updateList(list: ArrayList<DoctorItem>) {
+        doctorList = list
+        notifyDataSetChanged()
     }
 }
