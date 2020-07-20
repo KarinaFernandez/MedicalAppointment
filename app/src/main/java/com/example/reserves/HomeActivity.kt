@@ -24,7 +24,8 @@ class HomeActivity : AppCompatActivity(), DoctorAdapter.OnItemClickListener {
                 val doctorList = it
 
                 doctorList.forEach {
-                    val item = DoctorItem(it.nombre,
+                    val item = DoctorItem(it._id,
+                        it.nombre,
                         it.apellido
                     )
                     list += item
@@ -49,6 +50,7 @@ class HomeActivity : AppCompatActivity(), DoctorAdapter.OnItemClickListener {
 
         // Push to schedule activity
         val intent = Intent(this, ScheduleActivity::class.java)
+        intent.putExtra("doctorId", selectedDoctor.id)
         intent.putExtra("doctorName", selectedDoctor.name)
         intent.putExtra("doctorSurname", selectedDoctor.surname)
         startActivity(intent)

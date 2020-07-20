@@ -17,4 +17,7 @@ interface EndpointsInterface {
 
     @GET("medicos")
     fun getDoctors(): Call<ArrayList<DoctorData>>
+
+    @POST("reservas")
+    fun createSchedule(@Body scheduleData: ScheduleData): Call<ScheduleData>
 }

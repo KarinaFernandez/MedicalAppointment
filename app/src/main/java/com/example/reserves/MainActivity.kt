@@ -1,5 +1,6 @@
 package com.example.reserves
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -85,6 +86,12 @@ class MainActivity : AppCompatActivity() {
 
         apiService.loginUser(user) {
             if (it != null) {
+                // Save in preferences the user
+                val sharedPreferences = getSharedPreferences("User_Info", Context.MODE_PRIVATE)
+                val editor = sharedPreferences.edit()
+                editor.putString("userId", it._id)
+                editor.apply()
+
                 // Push to home activity
                 val intent = Intent(this, HomeActivity::class.java)
                 startActivity(intent)

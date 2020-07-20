@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        tools:text="@string/scheduleDoctor"
+        tools:text="@string/scheduleInfo"
         tools:textSize="18sp"
         android:layout_marginTop="10dp"
         android:textStyle="bold"
@@ -66,5 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:datePickerMode="calendar"
+        android:calendarViewShown="false"
         android:layout_below="@id/appointmentButton"/>
+
 </RelativeLayout>

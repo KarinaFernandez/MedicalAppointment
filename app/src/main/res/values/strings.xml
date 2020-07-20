@@ -27,5 +27,7 @@
     <string name="scheduleText">Reservar</string>
     <string name="specialty">Especialidad</string>
     <string name="date">20/08/2020</string>
-    <string name="scheduleDoctor">Reserva para el doctor:</string>
+    <string name="scheduleInfo">Reserva para el doctor: </string>
+    <string name="scheduleSuccessMessage">La reserva se ha realizado con exito</string>
+    <string name="scheduleFailedMessage">No se pudo realizar la reserva. Valide que la fecha ingresada es mayor a la fecha actual</string>
 </resources>

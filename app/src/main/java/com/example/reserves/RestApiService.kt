@@ -6,15 +6,16 @@ import retrofit2.Response
 
 
 class RestApiService {
-    fun loginUser(userData: UserData, onResult: (UserData?) -> Unit) {
-        val retrofit = ServiceBuilder.buildService(EndpointsInterface::class.java)
+    private val retrofit = ServiceBuilder.buildService(EndpointsInterface::class.java)
 
+    fun loginUser(userData: UserData, onResult: (UserData?) -> Unit) {
         retrofit.loginUser(userData).enqueue(
             object : Callback<UserData> {
                 override fun onFailure(call: Call<UserData>, t: Throwable) {
                     onResult(null)
                 }
-                override fun onResponse( call: Call<UserData>, response: Response<UserData>) {
+
+                override fun onResponse(call: Call<UserData>, response: Response<UserData>) {
                     val addedUser = response.body()
                     onResult(addedUser)
                 }
@@ -23,14 +24,13 @@ class RestApiService {
     }
 
     fun createUser(userData: UserData, onResult: (UserData?) -> Unit) {
-        val retrofit = ServiceBuilder.buildService(EndpointsInterface::class.java)
-
         retrofit.createUser(userData).enqueue(
             object : Callback<UserData> {
                 override fun onFailure(call: Call<UserData>, t: Throwable) {
                     onResult(null)
                 }
-                override fun onResponse( call: Call<UserData>, response: Response<UserData>) {
+
+                override fun onResponse(call: Call<UserData>, response: Response<UserData>) {
                     val addedUser = response.body()
                     onResult(addedUser)
                 }
@@ -39,20 +39,37 @@ class RestApiService {
     }
 
     fun getDoctors(onResult: (ArrayList<DoctorData>?) -> Unit) {
-        val retrofit = ServiceBuilder.buildService(EndpointsInterface::class.java)
-
         retrofit.getDoctors().enqueue(
             object : Callback<ArrayList<DoctorData>> {
-            override fun onResponse(
-                call: Call<ArrayList<DoctorData>>,
-                response: Response<ArrayList<DoctorData>>
-            ) {
-                val doctors = response.body()
-                onResult(doctors)
-            }
+                override fun onResponse(
+                    call: Call<ArrayList<DoctorData>>,
+                    response: Response<ArrayList<DoctorData>>
+                ) {
+                    val doctors = response.body()
+                    onResult(doctors)
+                }
+
                 override fun onFailure(call: Call<ArrayList<DoctorData>>, t: Throwable) {
                     onResult(null)
                 }
             })
+    }
+
+    fun createSchedule(scheduleData: ScheduleData, onResult: (ScheduleData?) -> Unit) {
+        retrofit.createSchedule(scheduleData).enqueue(
+            object : Callback<ScheduleData> {
+                override fun onFailure(call: Call<ScheduleData>, t: Throwable) {
+                    onResult(null)
+                }
+
+                override fun onResponse(
+                    call: Call<ScheduleData>,
+                    response: Response<ScheduleData>
+                ) {
+                    val schedule = response.body()
+                    onResult(schedule)
+                }
+            }
+        )
     }
 }

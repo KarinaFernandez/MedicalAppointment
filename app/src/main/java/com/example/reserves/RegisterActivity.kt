@@ -1,5 +1,6 @@
 package com.example.reserves
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
@@ -137,6 +138,12 @@ class RegisterActivity : AppCompatActivity() {
 
         apiService.createUser(user) {
             if (it != null) {
+                // Save in preferences the user
+                val sharedPreferences = getSharedPreferences("User_Info", Context.MODE_PRIVATE)
+                val editor = sharedPreferences.edit()
+                editor.putString("userId", it._id)
+                editor.apply()
+                
                 // Push to home activity
                 val intent = Intent(this, HomeActivity::class.java)
                 startActivity(intent)
