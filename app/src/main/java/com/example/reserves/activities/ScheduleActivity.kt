@@ -1,12 +1,12 @@
-package com.example.reserves
+package com.example.reserves.activities
 
 import android.content.Context
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.*
-import kotlinx.android.synthetic.main.activity_user_registration.*
+import com.example.reserves.R
+import com.example.reserves.entities.ScheduleData
+import com.example.reserves.network.RestApiService
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -44,14 +44,17 @@ class ScheduleActivity : AppCompatActivity() {
         }
 
         scheduleButton.setOnClickListener {
+            scheduleButton.isClickable = false
             val sharedPreferences = getSharedPreferences("User_Info", Context.MODE_PRIVATE)
             val userId =  sharedPreferences.getString("userId", "")
 
             val apiService = RestApiService()
-            val schedule = ScheduleData(_id = null,
-            medico = doctorId,
-            usuario = userId,
-            fecha = date.text.toString())
+            val schedule = ScheduleData(
+                _id = null,
+                medico = doctorId,
+                usuario = userId,
+                fecha = date.text.toString()
+            )
 
             apiService.createSchedule(schedule) {
                 if (it?._id != null) {
@@ -69,6 +72,7 @@ class ScheduleActivity : AppCompatActivity() {
                     ).show()
                 }
                // progress_bar.visibility = View.GONE
+                scheduleButton.isClickable = true
             }
         }
     }

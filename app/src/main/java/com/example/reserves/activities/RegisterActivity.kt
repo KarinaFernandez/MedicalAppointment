@@ -1,4 +1,4 @@
-package com.example.reserves
+package com.example.reserves.activities
 
 import android.content.Context
 import android.content.Intent
@@ -10,6 +10,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.reserves.R
+import com.example.reserves.entities.UserData
+import com.example.reserves.network.RestApiService
 import kotlinx.android.synthetic.main.activity_user_registration.*
 
 
@@ -29,6 +32,7 @@ class RegisterActivity : AppCompatActivity() {
 
         registerButton.setOnClickListener {
             progress_bar.visibility = View.VISIBLE
+        //    registerButton.isClickable = false
 
             if (isValidData(
                 name.text.toString().trim(),
@@ -175,6 +179,7 @@ class RegisterActivity : AppCompatActivity() {
                 ).show()
             }
             progress_bar.visibility = View.GONE
+           // registerButton.isClickable = true
         }
     }
 }

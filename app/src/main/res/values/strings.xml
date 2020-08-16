@@ -15,7 +15,7 @@
     <string name="password">Contraseña</string>
     <string name="invalidName">Nombre invalido, reingrese por favor</string>
     <string name="invalidSurname">Apellido invalido, reingrese por favor</string>
-    <string name="invalidEmail">Correo valido, reingrese por favor</string>
+    <string name="invalidEmail">Correo invalido, reingrese por favor</string>
     <string name="invalidPassword">La contraseña debe contener al menos 6 caracteres</string>
     <string name="invalidPhone">Teléfono invalido, reingrese por favor</string>
     <string name="invalidDocument">Ingrese su documento de identidad sin puntos ni guiones</string>

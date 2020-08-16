@@ -1,4 +1,4 @@
-package com.example.reserves
+package com.example.reserves.entities
 
 import com.google.gson.annotations.SerializedName
 

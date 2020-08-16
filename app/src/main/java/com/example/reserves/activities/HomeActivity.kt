@@ -1,23 +1,52 @@
-package com.example.reserves
+package com.example.reserves.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.EditText
 import androidx.appcompat.widget.SearchView
 import android.widget.Toast
+import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.reserves.DoctorAdapter
+import com.example.reserves.DoctorItem
+import com.example.reserves.R
+import com.example.reserves.daos.DoctorDao
+import com.example.reserves.dataBase.AppDatabase
+import com.example.reserves.entities.DoctorData
+import com.example.reserves.network.RestApiService
+import com.example.reserves.repositories.Repository
+import io.reactivex.Completable.fromCallable
+import io.reactivex.Observable.fromCallable
 import kotlinx.android.synthetic.main.activity_home.*
+import io.reactivex.Observable
+import io.reactivex.Scheduler
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
+import java.util.*
 
 import kotlin.collections.ArrayList
 
 class HomeActivity : AppCompatActivity(), DoctorAdapter.OnItemClickListener, SearchView.OnQueryTextListener {
+
+  //  private val repository: Repository
+  //  val allDoctors: LiveData<List<DoctorData>>
+
+    private var db: AppDatabase? = null
+    private var doctorDao: DoctorDao? = null
+
     private var list = ArrayList<DoctorItem>()
     private var doctors = ArrayList<DoctorItem>()
     private val adapter = DoctorAdapter(doctors, this)
     lateinit var recyclerView: RecyclerView
+
+    /*
+    init {
+        val doctorsDao = AppDatabase.getAppDataBase(application)?.doctorDao()
+        repository = doctorsDao?.let { Repository(it) }!!
+        allDoctors = repository.allDoctors
+    }*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +59,9 @@ class HomeActivity : AppCompatActivity(), DoctorAdapter.OnItemClickListener, Sea
 
         // Get doctors from API
         getDoctors()
+
+        // get doctors from DB
+        getDoctorsFromDB()
     }
 
     override fun onQueryTextSubmit(query: String?): Boolean {
@@ -57,7 +89,8 @@ class HomeActivity : AppCompatActivity(), DoctorAdapter.OnItemClickListener, Sea
                     doctors = list
                 }
 
-                recyclerView.adapter = DoctorAdapter(doctors, this)
+                recyclerView.adapter =
+                    DoctorAdapter(doctors, this)
                 recyclerView.layoutManager = LinearLayoutManager(this)
                 recyclerView.setHasFixedSize(true)
             } else {
@@ -69,6 +102,24 @@ class HomeActivity : AppCompatActivity(), DoctorAdapter.OnItemClickListener, Sea
             }
             progress_bar.visibility = View.GONE
         }
+    }
+
+    private fun getDoctorsFromDB() {
+        db = AppDatabase.getAppDataBase(context = this)
+
+        Observable.fromCallable {
+            db = AppDatabase.getAppDataBase(context = this)
+            doctorDao = db?.doctorDao()
+
+            db?.doctorDao()?.getDoctors()
+        }.doOnNext { list ->
+            var finalString = ""
+            // list?.map { finalString += it.name + " - " }
+            // tv_message.text = finalString
+
+        }.subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe()
     }
 
     override fun onItemClick(item: DoctorItem, position: Int) {

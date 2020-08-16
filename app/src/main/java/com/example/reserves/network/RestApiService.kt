@@ -1,12 +1,16 @@
-package com.example.reserves
+package com.example.reserves.network
 
+import com.example.reserves.entities.DoctorData
+import com.example.reserves.entities.ScheduleData
+import com.example.reserves.entities.UserData
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 
 class RestApiService {
-    private val retrofit = ServiceBuilder.buildService(EndpointsInterface::class.java)
+    private val retrofit =
+        ServiceBuilder.buildService(EndpointsInterface::class.java)
 
     fun loginUser(userData: UserData, onResult: (UserData?) -> Unit) {
         retrofit.loginUser(userData).enqueue(

@@ -10,6 +10,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb6accd0-7c0d-480f-bc20-402fddebe443" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_room_room_common_2_2_5_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_room_room_runtime_2_2_5_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_sqlite_sqlite_2_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_sqlite_sqlite_framework_2_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_reactivex_rxjava2_rxandroid_2_0_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_reactivex_rxjava2_rxjava_2_1_17_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_reactivestreams_reactive_streams_1_0_2_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/converters/DateTypeConverter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/converters/ListConverter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/daos/DoctorDao.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/dataBase/AppDatabase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/entities/CommentData.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/entities/DoctorData.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/entities/SpecialtyData.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/repositories/Repository.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -18,10 +33,32 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/jarAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/DoctorAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/DoctorAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/HomeActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/HomeActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/DoctorData.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/EndpointsInterface.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/network/EndpointsInterface.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/HomeActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/activities/HomeActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/activities/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/RegisterActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/activities/RegisterActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/RestApiService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/network/RestApiService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/ScheduleActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/activities/ScheduleActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/ScheduleData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/entities/ScheduleData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/ServiceBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/network/ServiceBuilder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/UserData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/reserves/entities/UserData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_user_registration.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_user_registration.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,14 +102,27 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DEBUGGABLE_DEVICE" value="Pixel_3_API_29 [emulator-5554]" />
+    <property name="DEBUGGABLE_PROCESS" value="com.example.reserves" />
+    <property name="DEBUGGER_ID" value="Auto" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Dependencies" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="RecentsManager">
     <key name="android.template.1533851180">
       <recent name="com.example.reserves" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.example.reserves.activities" />
+      <recent name="com.example.reserves.network" />
+      <recent name="com.example.reserves.entities" />
+      <recent name="com.example.reserves.converters" />
     </key>
     <key name="android.template.921990200">
       <recent name="com.example.reserves" />
@@ -155,6 +205,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="245" y="168" key="#PSD" timestamp="1597524727812">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state x="245" y="168" key="#PSD/0.23.1440.813@0.23.1440.813" timestamp="1597524727812" />
     <state x="499" y="156" key="#com.intellij.ide.util.MemberChooser" timestamp="1595282917193">
       <screen x="0" y="23" width="1440" height="820" />
     </state>
@@ -171,10 +225,18 @@
     <state x="458" y="187" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.820/-1385.-1057.1920.1057@0.23.1440.820" timestamp="1595197762608" />
     <state x="458" y="187" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.820@0.23.1440.820" timestamp="1595094980328" />
     <state x="458" y="198" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.877/-1385.-1057.1920.1000@0.23.1440.877" timestamp="1595214018205" />
+    <state x="483" y="89" width="474" height="681" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1597521000178">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state x="483" y="89" width="474" height="681" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.23.1440.813@0.23.1440.813" timestamp="1597521000178" />
     <state x="483" y="143" key="#xdebugger.evaluate" timestamp="1595110472401">
       <screen x="0" y="23" width="1440" height="820" />
     </state>
     <state x="483" y="143" key="#xdebugger.evaluate/0.23.1440.820@0.23.1440.820" timestamp="1595110472401" />
+    <state x="308" y="191" key="AndroidCreateResourceDirectoryDialog" timestamp="1597520701837">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state x="308" y="191" key="AndroidCreateResourceDirectoryDialog/0.23.1440.813@0.23.1440.813" timestamp="1597520701837" />
     <state x="308" y="195" key="AndroidCreateResourceFileDialog" timestamp="1595208122596">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -185,58 +247,142 @@
     <state x="575" y="305" key="AndroidCreateXmlResourceDialog/0.23.1440.820/-1385.-1057.1920.1057@0.23.1440.820" timestamp="1595262081767" />
     <state x="575" y="305" key="AndroidCreateXmlResourceDialog/0.23.1440.820@0.23.1440.820" timestamp="1595179824381" />
     <state x="575" y="325" key="AndroidCreateXmlResourceDialog/0.23.1440.877/-1385.-1057.1920.1000@0.23.1440.877" timestamp="1595208793241" />
-    <state x="576" y="205" key="AndroidProcessChooserDialog" timestamp="1595275725030">
-      <screen x="0" y="23" width="1440" height="820" />
+    <state x="576" y="203" key="AndroidProcessChooserDialog" timestamp="1597532931489">
+      <screen x="0" y="23" width="1440" height="813" />
     </state>
+    <state x="576" y="203" key="AndroidProcessChooserDialog/0.23.1440.813@0.23.1440.813" timestamp="1597532931489" />
     <state x="576" y="205" key="AndroidProcessChooserDialog/0.23.1440.820/-1385.-1057.1920.1057@0.23.1440.820" timestamp="1595275725030" />
     <state x="576" y="205" key="AndroidProcessChooserDialog/0.23.1440.820@0.23.1440.820" timestamp="1595106667114" />
-    <state width="1398" height="217" key="GridCell.Tab.0.bottom" timestamp="1595283561671">
-      <screen x="0" y="23" width="1440" height="820" />
+    <state width="429" height="466" key="DebuggerActiveHint" timestamp="1597533021860">
+      <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state width="1398" height="217" key="GridCell.Tab.0.bottom/0.23.1440.820/-1385.-1057.1920.1057@0.23.1440.820" timestamp="1595283561671" />
+    <state width="429" height="466" key="DebuggerActiveHint/0.23.1440.813@0.23.1440.813" timestamp="1597533021860" />
+    <state width="1398" height="285" key="GridCell.Tab.0.bottom" timestamp="1597533951387">
+      <screen x="0" y="23" width="1440" height="813" />
+    </state>
+    <state width="1398" height="285" key="GridCell.Tab.0.bottom/0.23.1440.813@0.23.1440.813" timestamp="1597533951387" />
+    <state width="1398" height="270" key="GridCell.Tab.0.bottom/0.23.1440.820/-1385.-1057.1920.1057@0.23.1440.820" timestamp="1595343125556" />
     <state width="1398" height="206" key="GridCell.Tab.0.bottom/0.23.1440.820@0.23.1440.820" timestamp="1595180490140" />
     <state width="1398" height="45" key="GridCell.Tab.0.bottom/0.23.1440.877/-1385.-1057.1920.1000@0.23.1440.877" timestamp="1595199088026" />
-    <state width="1398" height="217" key="GridCell.Tab.0.center" timestamp="1595283561670">
-      <screen x="0" y="23" width="1440" height="820" />
+    <state width="1398" height="285" key="GridCell.Tab.0.center" timestamp="1597533951386">
+      <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state width="1398" height="217" key="GridCell.Tab.0.center/0.23.1440.820/-1385.-1057.1920.1057@0.23.1440.820" timestamp="1595283561670" />
+    <state width="1398" height="285" key="GridCell.Tab.0.center/0.23.1440.813@0.23.1440.813" timestamp="1597533951386" />
+    <state width="1398" height="270" key="GridCell.Tab.0.center/0.23.1440.820/-1385.-1057.1920.1057@0.23.1440.820" timestamp="1595343125555" />
     <state width="1398" height="206" key="GridCell.Tab.0.center/0.23.1440.820@0.23.1440.820" timestamp="1595180490140" />
     <state width="1398" height="45" key="GridCell.Tab.0.center/0.23.1440.877/-1385.-1057.1920.1000@0.23.1440.877" timestamp="1595199088025" />
-    <state width="1398" height="217" key="GridCell.Tab.0.left" timestamp="1595283561670">
-      <screen x="0" y="23" width="1440" height="820" />
+    <state width="1398" height="285" key="GridCell.Tab.0.left" timestamp="1597533951386">
+      <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state width="1398" height="217" key="GridCell.Tab.0.left/0.23.1440.820/-1385.-1057.1920.1057@0.23.1440.820" timestamp="1595283561670" />
+    <state width="1398" height="285" key="GridCell.Tab.0.left/0.23.1440.813@0.23.1440.813" timestamp="1597533951386" />
+    <state width="1398" height="270" key="GridCell.Tab.0.left/0.23.1440.820/-1385.-1057.1920.1057@0.23.1440.820" timestamp="1595343125554" />
     <state width="1398" height="206" key="GridCell.Tab.0.left/0.23.1440.820@0.23.1440.820" timestamp="1595180490139" />
     <state width="1398" height="45" key="GridCell.Tab.0.left/0.23.1440.877/-1385.-1057.1920.1000@0.23.1440.877" timestamp="1595199088024" />
-    <state width="1398" height="217" key="GridCell.Tab.0.right" timestamp="1595283561671">
-      <screen x="0" y="23" width="1440" height="820" />
+    <state width="1398" height="285" key="GridCell.Tab.0.right" timestamp="1597533951386">
+      <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state width="1398" height="217" key="GridCell.Tab.0.right/0.23.1440.820/-1385.-1057.1920.1057@0.23.1440.820" timestamp="1595283561671" />
+    <state width="1398" height="285" key="GridCell.Tab.0.right/0.23.1440.813@0.23.1440.813" timestamp="1597533951386" />
+    <state width="1398" height="270" key="GridCell.Tab.0.right/0.23.1440.820/-1385.-1057.1920.1057@0.23.1440.820" timestamp="1595343125556" />
     <state width="1398" height="206" key="GridCell.Tab.0.right/0.23.1440.820@0.23.1440.820" timestamp="1595180490140" />
     <state width="1398" height="45" key="GridCell.Tab.0.right/0.23.1440.877/-1385.-1057.1920.1000@0.23.1440.877" timestamp="1595199088025" />
-    <state width="1398" height="217" key="GridCell.Tab.1.bottom" timestamp="1595283561674">
-      <screen x="0" y="23" width="1440" height="820" />
+    <state width="1398" height="267" key="GridCell.Tab.1.bottom" timestamp="1597533932812">
+      <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state width="1398" height="217" key="GridCell.Tab.1.bottom/0.23.1440.820/-1385.-1057.1920.1057@0.23.1440.820" timestamp="1595283561674" />
+    <state width="1398" height="267" key="GridCell.Tab.1.bottom/0.23.1440.813@0.23.1440.813" timestamp="1597533932812" />
+    <state width="1398" height="270" key="GridCell.Tab.1.bottom/0.23.1440.820/-1385.-1057.1920.1057@0.23.1440.820" timestamp="1595343125558" />
     <state width="1398" height="262" key="GridCell.Tab.1.bottom/0.23.1440.820@0.23.1440.820" timestamp="1595180481186" />
     <state width="1398" height="45" key="GridCell.Tab.1.bottom/0.23.1440.877/-1385.-1057.1920.1000@0.23.1440.877" timestamp="1595199086130" />
-    <state width="1398" height="217" key="GridCell.Tab.1.center" timestamp="1595283561673">
-      <screen x="0" y="23" width="1440" height="820" />
+    <state width="1398" height="267" key="GridCell.Tab.1.center" timestamp="1597533932812">
+      <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state width="1398" height="217" key="GridCell.Tab.1.center/0.23.1440.820/-1385.-1057.1920.1057@0.23.1440.820" timestamp="1595283561673" />
+    <state width="1398" height="267" key="GridCell.Tab.1.center/0.23.1440.813@0.23.1440.813" timestamp="1597533932812" />
+    <state width="1398" height="270" key="GridCell.Tab.1.center/0.23.1440.820/-1385.-1057.1920.1057@0.23.1440.820" timestamp="1595343125557" />
     <state width="1398" height="262" key="GridCell.Tab.1.center/0.23.1440.820@0.23.1440.820" timestamp="1595180481185" />
     <state width="1398" height="45" key="GridCell.Tab.1.center/0.23.1440.877/-1385.-1057.1920.1000@0.23.1440.877" timestamp="1595199086129" />
-    <state width="1398" height="217" key="GridCell.Tab.1.left" timestamp="1595283561672">
-      <screen x="0" y="23" width="1440" height="820" />
+    <state width="1398" height="267" key="GridCell.Tab.1.left" timestamp="1597533932812">
+      <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state width="1398" height="217" key="GridCell.Tab.1.left/0.23.1440.820/-1385.-1057.1920.1057@0.23.1440.820" timestamp="1595283561672" />
+    <state width="1398" height="267" key="GridCell.Tab.1.left/0.23.1440.813@0.23.1440.813" timestamp="1597533932812" />
+    <state width="1398" height="270" key="GridCell.Tab.1.left/0.23.1440.820/-1385.-1057.1920.1057@0.23.1440.820" timestamp="1595343125557" />
     <state width="1398" height="262" key="GridCell.Tab.1.left/0.23.1440.820@0.23.1440.820" timestamp="1595180481184" />
     <state width="1398" height="45" key="GridCell.Tab.1.left/0.23.1440.877/-1385.-1057.1920.1000@0.23.1440.877" timestamp="1595199086127" />
-    <state width="1398" height="217" key="GridCell.Tab.1.right" timestamp="1595283561673">
-      <screen x="0" y="23" width="1440" height="820" />
+    <state width="1398" height="267" key="GridCell.Tab.1.right" timestamp="1597533932812">
+      <screen x="0" y="23" width="1440" height="813" />
     </state>
-    <state width="1398" height="217" key="GridCell.Tab.1.right/0.23.1440.820/-1385.-1057.1920.1057@0.23.1440.820" timestamp="1595283561673" />
+    <state width="1398" height="267" key="GridCell.Tab.1.right/0.23.1440.813@0.23.1440.813" timestamp="1597533932812" />
+    <state width="1398" height="270" key="GridCell.Tab.1.right/0.23.1440.820/-1385.-1057.1920.1057@0.23.1440.820" timestamp="1595343125558" />
     <state width="1398" height="262" key="GridCell.Tab.1.right/0.23.1440.820@0.23.1440.820" timestamp="1595180481185" />
     <state width="1398" height="45" key="GridCell.Tab.1.right/0.23.1440.877/-1385.-1057.1920.1000@0.23.1440.877" timestamp="1595199086130" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/reserves/activities/HomeActivity.kt</url>
+          <line>113</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/reserves/activities/HomeActivity.kt</url>
+          <line>111</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/reserves/activities/HomeActivity.kt</url>
+          <line>63</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/reserves/activities/MainActivity.kt</url>
+          <line>93</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/reserves/network/RestApiService.kt</url>
+          <line>15</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/reserves/network/RestApiService.kt</url>
+          <line>18</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/reserves/network/RestApiService.kt</url>
+          <line>23</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/reserves/activities/MainActivity.kt</url>
+          <line>94</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/reserves/activities/MainActivity.kt</url>
+          <line>105</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/reserves/network/ServiceBuilder.kt</url>
+          <line>10</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/reserves/activities/RegisterActivity.kt</url>
+          <line>162</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/reserves/network/RestApiService.kt</url>
+          <line>32</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/reserves/network/RestApiService.kt</url>
+          <line>36</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

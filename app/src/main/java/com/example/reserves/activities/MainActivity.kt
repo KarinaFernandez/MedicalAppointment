@@ -1,4 +1,4 @@
-package com.example.reserves
+package com.example.reserves.activities
 
 import android.content.Context
 import android.content.Intent
@@ -10,6 +10,9 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.reserves.R
+import com.example.reserves.entities.UserData
+import com.example.reserves.network.RestApiService
 import kotlinx.android.synthetic.main.activity_user_registration.*
 
 class MainActivity : AppCompatActivity() {
@@ -29,6 +32,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         loginButton.setOnClickListener {
+            loginButton.isClickable = false
+
             if (validaData(email.text.toString().trim(), password.text.toString().trim())) {
                 progress_bar.visibility = View.VISIBLE
 
@@ -73,8 +78,10 @@ class MainActivity : AppCompatActivity() {
         email: String,
         password: String
     ) {
+        val loginButton = findViewById<Button>(R.id.loginButton)
         val apiService = RestApiService()
-        val user = UserData(_id = null,
+        val user = UserData(
+            _id = null,
             nombre = null,
             apellido = null,
             email = email,
@@ -103,6 +110,7 @@ class MainActivity : AppCompatActivity() {
                 ).show()
             }
             progress_bar.visibility = View.GONE
+            loginButton.isClickable = true
         }
     }
 }
