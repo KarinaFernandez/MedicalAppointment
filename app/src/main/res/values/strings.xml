@@ -30,4 +30,6 @@
     <string name="scheduleInfo">Reserva para el doctor: </string>
     <string name="scheduleSuccessMessage">La reserva se ha realizado con exito</string>
     <string name="scheduleFailedMessage">No se pudo realizar la reserva. Valide que la fecha ingresada es mayor a la fecha actual</string>
+    <string name="locationPermisionDenied">Permiso denegado. No se podra agregar su ubicación a la reserva</string>
+    <string name="coordsErrorMessage">No se pudo obtener las coordenadas</string>
 </resources>

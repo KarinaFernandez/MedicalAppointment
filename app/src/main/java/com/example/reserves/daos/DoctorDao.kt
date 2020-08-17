@@ -8,8 +8,6 @@ import com.example.reserves.entities.DoctorData
 @Dao
 interface DoctorDao {
 
-    // fun getDoctors(): List<DoctorData>
-
     @Query("SELECT * FROM DoctorData")
     fun getDoctors(): LiveData<List<DoctorItem>>
 
