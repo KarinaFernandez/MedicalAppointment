@@ -31,7 +31,8 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
                     val item = DoctorItem(
                         it._id,
                         it.nombre,
-                        it.apellido
+                        it.apellido,
+                        it.foto
                     )
                     doctors.add(item)
                 }

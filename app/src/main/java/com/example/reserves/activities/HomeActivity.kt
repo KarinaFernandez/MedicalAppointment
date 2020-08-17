@@ -75,6 +75,7 @@ class HomeActivity : AppCompatActivity(), DoctorAdapter.OnItemClickListener, Sea
         intent.putExtra("doctorId", selectedDoctor.id)
         intent.putExtra("doctorName", selectedDoctor.name)
         intent.putExtra("doctorSurname", selectedDoctor.surname)
+        intent.putExtra("doctorImagePath", selectedDoctor.imagePath)
         startActivity(intent)
     }
 }

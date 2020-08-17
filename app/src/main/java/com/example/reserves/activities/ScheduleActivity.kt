@@ -3,6 +3,7 @@ package com.example.reserves.activities
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -14,7 +15,6 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
-import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -28,6 +28,7 @@ import kotlinx.android.synthetic.main.activity_schedule.*
 import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat
+import android.net.Uri
 import java.util.*
 
 private const val PERMISSION_REQUEST = 10
@@ -48,6 +49,11 @@ class ScheduleActivity : AppCompatActivity()  {
     private val CAPTURE_IMAGE_REQUEST = 1
     private lateinit var mCurrentPhotoPath: String
     private var imageURL: String? = null
+    val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+
+    private val PERMISSION_CODE = 1000;
+    private val IMAGE_CAPTURE_CODE = 1001
+    var image_uri: Uri? = null
 
     private var permission = arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION)
 
@@ -59,6 +65,7 @@ class ScheduleActivity : AppCompatActivity()  {
         val doctorId=intent.getStringExtra("doctorId")
         val doctorName=intent.getStringExtra("doctorName")
         val doctorSurname=intent.getStringExtra("doctorSurname")
+        val doctorImagePath=intent.getStringExtra("doctorImagePath")
 
         val scheduleDoctor = findViewById<TextView>(R.id.scheduleDoctor)
         val doctorInfo = findViewById<TextView>(R.id.doctorInfo)
@@ -67,6 +74,10 @@ class ScheduleActivity : AppCompatActivity()  {
         val scheduleButton = findViewById<Button>(R.id.appointmentButton)
         val addImageButton = findViewById<Button>(R.id.addImageButton)
         val drImageView = findViewById<ImageView>(R.id.doctorImageView)
+
+        // Load dr image
+        val uri = Uri.parse(doctorImagePath)
+        doctorImageView.setImageURI(uri)
 
         // Load schedule info
         scheduleDoctor.text = getString(R.string.scheduleInfo)
@@ -129,12 +140,34 @@ class ScheduleActivity : AppCompatActivity()  {
 
         // Add image button pressed
         addImageButton.setOnClickListener {
-            /*val callCameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            if (callCameraIntent.resolveActivity(packageManager) != null) {
-                startActivityForResult(callCameraIntent, CAMERA_REQUEST_CODE)
-            }*/
-            captureImage()
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+                if (checkSelfPermission(Manifest.permission.CAMERA)
+                    == PackageManager.PERMISSION_DENIED ||
+                    checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    == PackageManager.PERMISSION_DENIED){
+                    //permission was not enabled
+                    val permission = arrayOf(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    //show popup to request permission
+                    requestPermissions(permission, PERMISSION_CODE)
+                } else {
+                    //permission already granted
+                    openCamera()
+                }
+            } else {
+                openCamera()
+            }
         }
+    }
+
+    private fun openCamera() {
+        val values = ContentValues()
+        values.put(MediaStore.Images.Media.TITLE, "New Picture")
+        values.put(MediaStore.Images.Media.DESCRIPTION, "From the Camera")
+        image_uri = contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
+        //camera intent
+        val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, image_uri)
+        startActivityForResult(cameraIntent, IMAGE_CAPTURE_CODE)
     }
 
     override fun onStart() {
@@ -256,58 +289,21 @@ class ScheduleActivity : AppCompatActivity()  {
             }
         } else if (requestCode == 0) { // Camera permission
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
-                captureImage()
+                openCamera()
             }
         }
     }
 
-    private fun captureImage() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                this,
-                arrayOf(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE), 0)
-        } else {
-            val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            if (takePictureIntent.resolveActivity(packageManager) != null) {
-                // Create the File where the photo should go
-                try {
-
-                    photoFile = createImageFile()
-
-                    imageURL = photoFile?.getAbsolutePath()
-                    updateDoctorImage()
-
-                    // Continue only if the File was successfully created
-                    if (photoFile != null) {
-                        var photoURI = FileProvider.getUriForFile(
-                            this,
-                            "com.example.reserves.fileprovider",
-                            photoFile!!
-                        )
-                        takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
-                        startActivityForResult(takePictureIntent, CAPTURE_IMAGE_REQUEST)
-
-                    }
-                } catch (ex: Exception) {
-                    // Error occurred while creating the File
-                   print("Error creating file")
-                }
-            } else {
-                print("TakePictureIntent null")
-            }
-        }
-    }
-
-    // On camera success
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode == CAPTURE_IMAGE_REQUEST && resultCode == Activity.RESULT_OK) {
-            val myBitmap = BitmapFactory.decodeFile(photoFile?.getAbsolutePath())
-            doctorImageView.setImageBitmap(myBitmap)
+        //called when image was captured from camera intent
+        if (resultCode == Activity.RESULT_OK){
+            //set image captured to image view
+            doctorImageView.setImageURI(image_uri)
 
-        } else {
-            print("Ocurrió un error")
+            imageURL = image_uri.toString()
+            updateDoctorImage()
         }
     }
 
@@ -342,22 +338,5 @@ class ScheduleActivity : AppCompatActivity()  {
                 }
             }
         }
-    }
-
-    @Throws(IOException::class)
-    private fun createImageFile(): File {
-        // Create an image file name
-        val timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
-        val imageFileName = "JPEG_" + timeStamp + "_"
-        val storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
-        val image = File.createTempFile(
-            imageFileName, /* prefix */
-            ".jpg", /* suffix */
-            storageDir      /* directory */
-        )
-
-        // Save a file: path for use with ACTION_VIEW intents
-        mCurrentPhotoPath = image.absolutePath
-        return image
     }
 }

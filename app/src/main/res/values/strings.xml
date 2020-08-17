@@ -32,7 +32,7 @@
     <string name="scheduleFailedMessage">No se pudo realizar la reserva. Valide que la fecha ingresada es mayor a la fecha actual</string>
     <string name="locationPermisionDenied">Permiso denegado. No se podra agregar su ubicación a la reserva</string>
     <string name="coordsErrorMessage">No se pudo obtener las coordenadas</string>
-    <string name="addPhotoButton">Agregar foto de Dr.</string>
+    <string name="addPhotoButton">Agregar foto a Dr.</string>
     <string name="errorUpdateingImage">Error al actualizar imagen del doctor</string>
     <string name="imageUpdated">La imagen a sido actualizada con exito</string>
 </resources>
