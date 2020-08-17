@@ -59,6 +59,20 @@ class RestApiService {
             })
     }
 
+    fun updateDoctor(id: String, doctorData: DoctorData, onResult: (DoctorData?) -> Unit) {
+        retrofit.updateDoctor(id, doctorData).enqueue(
+            object : Callback<DoctorData> {
+                override fun onFailure(call: Call<DoctorData>, t: Throwable) {
+                    onResult(null)
+                }
+
+                override fun onResponse(call: Call<DoctorData>, response: Response<DoctorData>) {
+                    val updatedDoctor = response.body()
+                    onResult(updatedDoctor)
+                }
+            })
+    }
+
     fun createSchedule(scheduleData: ScheduleData, onResult: (ScheduleData?) -> Unit) {
         retrofit.createSchedule(scheduleData).enqueue(
             object : Callback<ScheduleData> {

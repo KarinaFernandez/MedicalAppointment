@@ -26,19 +26,38 @@
         tools:text="@string/scheduleInfo"
         tools:textSize="18sp"
         android:layout_marginTop="10dp"
-        android:textStyle="bold"
         android:layout_below="@id/appointmentMessage"
         />
 
     <TextView
         android:id="@+id/doctorInfo"
-        android:layout_width="125dp"
+        android:layout_width="250dp"
         android:layout_height="30dp"
-        android:layout_marginTop="55dp"
+        android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_toEndOf="@id/scheduleDoctor"
+        android:layout_below="@id/scheduleDoctor"
         android:text="@string/name"
+        android:textStyle="bold"
         tools:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/doctorImageView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/scheduleDoctor"
+        android:layout_marginEnd="8dp"
+        android:layout_toEndOf="@id/doctorInfo"
+        android:visibility="visible"
+        tools:srcCompat="@android:color/darker_gray" />
+
+    <Button
+        android:id="@+id/addImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/doctorImageView"
+        android:layout_alignRight="@id/doctorImageView"
+        android:layout_alignBaseline="@+id/appointmentButton"
+        android:text="@string/addPhotoButton" />
 
     <TextView
         android:id="@+id/date"
@@ -50,8 +69,9 @@
         tools:text="@string/date"
         tools:textSize="18sp"
         android:layout_marginTop="10dp"
-        android:layout_below="@id/scheduleDoctor"
+        android:layout_below="@id/doctorInfo"
         />
+
     <Button
         android:id="@+id/appointmentButton"
         android:layout_width="wrap_content"

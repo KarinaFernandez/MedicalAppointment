@@ -179,7 +179,7 @@ class RegisterActivity : AppCompatActivity() {
                 ).show()
             }
             progress_bar.visibility = View.GONE
-           // registerButton.isClickable = true
+            registerButton.isClickable = true
         }
     }
 }

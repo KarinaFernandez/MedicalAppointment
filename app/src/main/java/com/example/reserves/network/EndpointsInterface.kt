@@ -4,9 +4,7 @@ import com.example.reserves.entities.DoctorData
 import com.example.reserves.entities.ScheduleData
 import com.example.reserves.entities.UserData
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface EndpointsInterface {
 
@@ -18,6 +16,9 @@ interface EndpointsInterface {
 
     @GET("medicos")
     fun getDoctors(): Call<ArrayList<DoctorData>>
+
+    @PUT("medicos/{id}")
+    fun updateDoctor(@Path("id") id: String?, @Body doctorData: DoctorData): Call<DoctorData>
 
     @POST("reservas")
     fun createSchedule(@Body scheduleData: ScheduleData): Call<ScheduleData>

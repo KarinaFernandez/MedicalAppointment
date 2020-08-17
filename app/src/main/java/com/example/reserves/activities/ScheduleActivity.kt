@@ -1,30 +1,40 @@
 package com.example.reserves.activities
 
+import android.Manifest
+import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.BitmapFactory
 import android.location.Location
+import android.location.LocationListener
 import android.location.LocationManager
 import android.os.Build
 import android.os.Bundle
-import android.widget.Button
-import android.widget.DatePicker
-import android.widget.TextView
-import android.provider.Settings
-import android.widget.Toast
+import android.os.Environment
+import android.provider.MediaStore
+import android.util.Log
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import androidx.core.content.FileProvider
 import com.example.reserves.R
+import com.example.reserves.entities.DoctorData
 import com.example.reserves.entities.ScheduleData
 import com.example.reserves.network.RestApiService
+import kotlinx.android.synthetic.main.activity_schedule.*
+import java.io.File
+import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
-import android.annotation.SuppressLint
-import android.location.LocationListener
 
 private const val PERMISSION_REQUEST = 10
 
 class ScheduleActivity : AppCompatActivity()  {
 
+    // Location properties
     lateinit var locationManager: LocationManager
     private var hasGps = false
     private var hasNetwork = false
@@ -32,6 +42,12 @@ class ScheduleActivity : AppCompatActivity()  {
     private var locationNetwork: Location? = null
     var latitude: Double? = null
     var longitude: Double? = null
+
+    // Camera properties
+    private var photoFile: File? = null
+    private val CAPTURE_IMAGE_REQUEST = 1
+    private lateinit var mCurrentPhotoPath: String
+    private var imageURL: String? = null
 
     private var permission = arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION)
 
@@ -49,6 +65,8 @@ class ScheduleActivity : AppCompatActivity()  {
         val date = findViewById<TextView>(R.id.date)
         val datePicker = findViewById<DatePicker>(R.id.datePicker)
         val scheduleButton = findViewById<Button>(R.id.appointmentButton)
+        val addImageButton = findViewById<Button>(R.id.addImageButton)
+        val drImageView = findViewById<ImageView>(R.id.doctorImageView)
 
         // Load schedule info
         scheduleDoctor.text = getString(R.string.scheduleInfo)
@@ -67,6 +85,7 @@ class ScheduleActivity : AppCompatActivity()  {
             date.text = selectedDay
         }
 
+        // Schedule button pressed
         scheduleButton.setOnClickListener {
             scheduleButton.isClickable = false
             val sharedPreferences = getSharedPreferences("User_Info", Context.MODE_PRIVATE)
@@ -106,6 +125,15 @@ class ScheduleActivity : AppCompatActivity()  {
                 //progress_bar.visibility = View.GONE
                 scheduleButton.isClickable = true
             }
+        }
+
+        // Add image button pressed
+        addImageButton.setOnClickListener {
+            /*val callCameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            if (callCameraIntent.resolveActivity(packageManager) != null) {
+                startActivityForResult(callCameraIntent, CAMERA_REQUEST_CODE)
+            }*/
+            captureImage()
         }
     }
 
@@ -196,12 +224,12 @@ class ScheduleActivity : AppCompatActivity()  {
                     longitude = locationNetwork?.longitude
                 }
             }
-
         } else {
             Toast.makeText(this, getString(R.string.coordsErrorMessage), Toast.LENGTH_SHORT).show()
         }
     }
 
+    // Check location permission
     private fun checkPermission(permissionArray: Array<String>): Boolean {
         var allSuccess = true
         for (i in permissionArray.indices) {
@@ -212,19 +240,124 @@ class ScheduleActivity : AppCompatActivity()  {
         return allSuccess
     }
 
+    // Validate permissions
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array <out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+
+        // Location permission
         if (requestCode == PERMISSION_REQUEST) {
-            var allSuccess = true
             for (i in permissions.indices) {
                 if (grantResults[i] == PackageManager.PERMISSION_DENIED) {
-                    allSuccess = false
                     val requestAgain = Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && shouldShowRequestPermissionRationale(permissions[i])
                     if (requestAgain) {
                         Toast.makeText(this, getString(R.string.locationPermisionDenied), Toast.LENGTH_SHORT).show()
                     }
                 }
             }
+        } else if (requestCode == 0) { // Camera permission
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
+                captureImage()
+            }
         }
+    }
+
+    private fun captureImage() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE), 0)
+        } else {
+            val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            if (takePictureIntent.resolveActivity(packageManager) != null) {
+                // Create the File where the photo should go
+                try {
+
+                    photoFile = createImageFile()
+
+                    imageURL = photoFile?.getAbsolutePath()
+                    updateDoctorImage()
+
+                    // Continue only if the File was successfully created
+                    if (photoFile != null) {
+                        var photoURI = FileProvider.getUriForFile(
+                            this,
+                            "com.example.reserves.fileprovider",
+                            photoFile!!
+                        )
+                        takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
+                        startActivityForResult(takePictureIntent, CAPTURE_IMAGE_REQUEST)
+
+                    }
+                } catch (ex: Exception) {
+                    // Error occurred while creating the File
+                   print("Error creating file")
+                }
+            } else {
+                print("TakePictureIntent null")
+            }
+        }
+    }
+
+    // On camera success
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == CAPTURE_IMAGE_REQUEST && resultCode == Activity.RESULT_OK) {
+            val myBitmap = BitmapFactory.decodeFile(photoFile?.getAbsolutePath())
+            doctorImageView.setImageBitmap(myBitmap)
+
+        } else {
+            print("Ocurrió un error")
+        }
+    }
+
+    private fun updateDoctorImage() {
+        val apiService = RestApiService()
+        val doctorId = intent.getStringExtra("doctorId")
+
+        if (imageURL != null) {
+            val doctor = DoctorData(
+                id = null,
+                _id = doctorId,
+                nombre = null,
+                apellido = null,
+                titulo = null,
+                foto = imageURL,
+                puntuacion = null,
+                centroMedico = null
+            )
+            apiService.updateDoctor(doctorId, doctor) {
+                if (it != null) {
+                    Toast.makeText(
+                        applicationContext,
+                        getString(R.string.imageUpdated),
+                        Toast.LENGTH_LONG
+                    ).show()
+                } else {
+                    Toast.makeText(
+                        applicationContext,
+                        getString(R.string.errorUpdateingImage),
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+        }
+    }
+
+    @Throws(IOException::class)
+    private fun createImageFile(): File {
+        // Create an image file name
+        val timeStamp = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
+        val imageFileName = "JPEG_" + timeStamp + "_"
+        val storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+        val image = File.createTempFile(
+            imageFileName, /* prefix */
+            ".jpg", /* suffix */
+            storageDir      /* directory */
+        )
+
+        // Save a file: path for use with ACTION_VIEW intents
+        mCurrentPhotoPath = image.absolutePath
+        return image
     }
 }

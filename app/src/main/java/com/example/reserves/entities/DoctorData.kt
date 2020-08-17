@@ -20,9 +20,6 @@ data class DoctorData (
     //  @SerializedName("especialidades") var especialidades: List<SpecialtyData>?,
 
     @SerializedName("puntuacion") val puntuacion: Int?,
-
- //   @TypeConverters(ListConverter::class)
-    //@SerializedName("comentarios") val comentarios: List<CommentData>?,
-
-    @SerializedName("centroMedico") val centroMedico: String?
+    @SerializedName("centroMedico") val centroMedico: String?,
+    @SerializedName("foto") val foto: String?
 )
