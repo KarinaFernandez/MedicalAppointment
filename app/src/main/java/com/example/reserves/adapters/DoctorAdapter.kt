@@ -1,4 +1,4 @@
-package com.example.reserves
+package com.example.reserves.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,13 +9,11 @@ import android.widget.Filter
 import android.widget.Filterable
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.reserves.R
 import kotlinx.android.synthetic.main.doctor_item.view.*
-import java.util.*
 import kotlin.collections.ArrayList
 
-class DoctorAdapter(private var doctorList: ArrayList<DoctorItem>,
-                    private val listener: OnItemClickListener): RecyclerView.Adapter<DoctorAdapter.DoctorViewHolder>(),
-    Filterable {
+class DoctorAdapter(private var doctorList: ArrayList<DoctorItem>, private val listener: OnItemClickListener): RecyclerView.Adapter<DoctorAdapter.DoctorViewHolder>(), Filterable {
 
     var doctorFilterList = ArrayList<DoctorItem>()
     private lateinit var mcontext: Context
@@ -84,7 +82,6 @@ class DoctorAdapter(private var doctorList: ArrayList<DoctorItem>,
                 doctorFilterList = results?.values as ArrayList<DoctorItem>
                 notifyDataSetChanged()
             }
-
         }
     }
 }

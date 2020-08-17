@@ -9,31 +9,32 @@ import com.example.reserves.converters.DateTypeConverter
 import com.example.reserves.converters.ListConverter
 import com.example.reserves.daos.DoctorDao
 import com.example.reserves.entities.DoctorData
+import kotlinx.coroutines.CoroutineScope
 
 @Database(entities = [DoctorData::class], version = 1)
-@TypeConverters(DateTypeConverter::class, ListConverter::class)
+// @TypeConverters(DateTypeConverter::class, ListConverter::class)
 
 abstract class AppDatabase : RoomDatabase() {
     abstract fun doctorDao(): DoctorDao
 
     companion object {
-        var INSTANCE: AppDatabase? = null
+        @Volatile
+        private var INSTANCE: AppDatabase? = null
 
-        fun getAppDataBase(context: Context): AppDatabase? {
-            if (INSTANCE == null) {
-                synchronized(AppDatabase::class) {
-                    INSTANCE = Room.databaseBuilder(
-                        context.applicationContext,
-                        AppDatabase::class.java,
-                        "db"
-                    ).build()
-                }
+        fun getDatabase(context: Context, scope: CoroutineScope): AppDatabase {
+            val tempInstance = INSTANCE
+            if (tempInstance != null) {
+                return tempInstance
             }
-            return INSTANCE
-        }
-
-        fun destroyDataBase() {
-            INSTANCE = null
+            synchronized(this) {
+                val instance = Room.databaseBuilder(
+                    context.applicationContext,
+                    AppDatabase::class.java,
+                    "db"
+                ).build()
+                INSTANCE = instance
+                return instance
+            }
         }
     }
 }
